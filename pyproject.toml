@@ -62,11 +62,6 @@ build-backend = 'setuptools.build_meta'
 [tool.setuptools]
 packages = [
     "boto3-stubs",
-    "boto3-stubs.docs",
-    "boto3-stubs.dynamodb",
-    "boto3-stubs.ec2",
-    "boto3-stubs.resources",
-    "boto3-stubs.s3",
 ]
 
 [tool.pyright]

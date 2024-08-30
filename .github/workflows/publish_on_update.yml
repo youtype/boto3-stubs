@@ -2,8 +2,8 @@ name: Publish boto3-stubs
 concurrency: publish
 
 on:
-  # schedule:
-  #   - cron: "0 * * * *"
+  schedule:
+    - cron: "0 0 * * *" # every day at midnight
   workflow_dispatch:
     inputs:
       force:

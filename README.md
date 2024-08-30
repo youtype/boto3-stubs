@@ -10,7 +10,7 @@
 Type annotations and code completion for [boto3](https://pypi.org/project/boto3/) package.
 This package is a part of [mypy_boto3_builder](https://github.com/youtype/mypy_boto3_builder) project.
 
-[![Publish botocore-stubs](https://github.com/youtype/botocore-stubs/actions/workflows/publish_on_update.yml/badge.svg)](https://github.com/youtype/botocore-stubs/actions/workflows/publish_on_update.yml)
+[![Publish boto3-stubs-lite](https://github.com/youtype/boto3-stubs/actions/workflows/publish_on_update.yml/badge.svg)](https://github.com/youtype/boto3-stubs/actions/workflows/publish_on_update.yml)
 
 - [boto3-stubs](#boto3-stubs)
   - [Installation](#installation)
@@ -30,10 +30,10 @@ Use [mypy](https://github.com/python/mypy) or [pyright](https://github.com/micro
 
 ## Versioning
 
-`boto3-stubs` version is the same as related `boto3` version and follows
+`boto3-stubs` and `boto3-stubs-lite` versions are the same as related `boto3` version and follows
 [PEP 440](https://www.python.org/dev/peps/pep-0440/) format.
 
 ## Support and contributing
 
 Please reports any bugs or request new features in
-[boto3-stubs](https://github.com/youtype/boto3-stubs/issues/) repository.
+[mypy_boto3_builder](https://github.com/youtype/mypy_boto3_builder/issues) repository.

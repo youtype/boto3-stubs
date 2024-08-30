@@ -52,8 +52,8 @@ dev-dependencies = [
 Homepage = "https://github.com/youtype/boto3-stubs"
 Documentation = "https://youtype.github.io/mypy_boto3_builder/"
 Repository = "https://github.com/youtype/boto3-stubs"
-Changelog = "https://github.com/youtype/boto3-stubs/releases"
-Issues = "https://github.com/youtype/boto3-stubs/issues"
+Changelog = "https://github.com/youtype/mypy_boto3_builder/releases"
+Issues = "https://github.com/youtype/mypy_boto3_builder/issues"
 
 [build-system]
 requires = ['setuptools']

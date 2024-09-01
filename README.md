@@ -10,7 +10,7 @@
 Type annotations and code completion for [boto3](https://pypi.org/project/boto3/) package.
 This package is a part of [mypy_boto3_builder](https://github.com/youtype/mypy_boto3_builder) project.
 
-[![Publish boto3-stubs-lite](https://github.com/youtype/boto3-stubs/actions/workflows/publish_on_update.yml/badge.svg)](https://github.com/youtype/boto3-stubs/actions/workflows/publish_on_update.yml)
+[![Publish boto3-stubs](https://github.com/youtype/boto3-stubs/actions/workflows/publish_on_update.yml/badge.svg)](https://github.com/youtype/boto3-stubs/actions/workflows/publish_on_update.yml)
 
 - [boto3-stubs](#boto3-stubs)
   - [Installation](#installation)

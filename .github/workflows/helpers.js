@@ -59,7 +59,7 @@ function getNextVersion(version) {
     return `${stableVersion}.post${parseInt(post, 10) + 1}`
 }
 
-async function extractVersions() {
+async function extractVersions(stubsVersion) {
     core.setOutput('stubs-version', '')
     const package = process.env.PACKAGE
     const stubsPackage = process.env.STUBS
@@ -73,7 +73,7 @@ async function extractVersions() {
     const version = inputVersion ? inputVersion : await getLatestVersion(package)
     core.notice(`${package} version = ${version}`)
 
-    const stubsVersion = await getLatestStubsVersion(stubsPackage, version)
+    stubsVersion = stubsVersion || await getLatestStubsVersion(stubsPackage, version)
     core.notice(`${stubsPackage} latest version = ${stubsVersion}`)
 
     const buildStubsVersion = stubsVersion ? getNextVersion(stubsVersion) : version

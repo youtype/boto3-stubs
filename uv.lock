@@ -60,7 +60,7 @@ wheels = [
 ]
 
 [[package]]
-name = "boto3-stubs-lite"
+name = "boto3-stubs"
 version = "1.35.6"
 source = { editable = "." }
 dependencies = [

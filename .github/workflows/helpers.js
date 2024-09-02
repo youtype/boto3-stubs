@@ -87,9 +87,9 @@ async function extractVersions() {
     }
 
     core.notice(`New ${package} version found: ${version}`)
-    core.notice(`${stubsPackage} build version = ${version}`)
+    core.notice(`${stubsPackage} build version = ${buildStubsVersion}`)
     core.setOutput('version', version)
-    core.setOutput('stubs-version', version)
+    core.setOutput('stubs-version', buildStubsVersion)
 }
 
 async function extractLocalVersions() {
@@ -112,9 +112,9 @@ async function extractLocalVersions() {
     }
 
     core.notice(`New ${package} version found: ${version}`)
-    core.notice(`${stubsPackage} build version = ${stubsVersion}`)
+    core.notice(`${stubsPackage} build version = ${version}`)
     core.setOutput('version', version)
-    core.setOutput('stubs-version', stubsVersion)
+    core.setOutput('stubs-version', version)
 }
 
 module.exports = {

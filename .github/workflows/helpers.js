@@ -73,7 +73,7 @@ async function extractVersions() {
     const version = inputVersion ? inputVersion : await getLatestVersion(package)
     core.notice(`${package} version = ${version}`)
 
-    stubsVersion = await getLatestStubsVersion(stubsPackage, version)
+    const stubsVersion = await getLatestStubsVersion(stubsPackage, version)
     core.notice(`${stubsPackage} latest version = ${stubsVersion}`)
 
     const buildStubsVersion = stubsVersion ? getNextVersion(stubsVersion) : version

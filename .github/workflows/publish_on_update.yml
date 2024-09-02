@@ -19,7 +19,7 @@ on:
 
 env:
   PACKAGE: boto3
-  STUBS: boto3-stubs-lite
+  STUBS: boto3-stubs
 
 jobs:
   check-version:

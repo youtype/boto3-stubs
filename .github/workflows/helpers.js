@@ -59,7 +59,7 @@ function getNextVersion(version) {
     return `${stableVersion}.post${parseInt(post, 10) + 1}`
 }
 
-async function extractVersions(stubsVersion) {
+async function extractVersions() {
     core.setOutput('stubs-version', '')
     const package = process.env.PACKAGE
     const stubsPackage = process.env.STUBS
@@ -73,7 +73,7 @@ async function extractVersions(stubsVersion) {
     const version = inputVersion ? inputVersion : await getLatestVersion(package)
     core.notice(`${package} version = ${version}`)
 
-    stubsVersion = stubsVersion || await getLatestStubsVersion(stubsPackage, version)
+    stubsVersion = await getLatestStubsVersion(stubsPackage, version)
     core.notice(`${stubsPackage} latest version = ${stubsVersion}`)
 
     const buildStubsVersion = stubsVersion ? getNextVersion(stubsVersion) : version
@@ -92,7 +92,33 @@ async function extractVersions(stubsVersion) {
     core.setOutput('stubs-version', buildStubsVersion)
 }
 
+async function extractLocalVersions() {
+    core.setOutput('stubs-version', '')
+    const package = process.env.PACKAGE
+    const stubsPackage = process.env.STUBS
+
+    const inputVersion = context.payload.inputs?.version
+    const version = inputVersion ? inputVersion : await getLatestVersion(package)
+    core.notice(`${package} version = ${version}`)
+
+    const { readFileSync } = require('fs')
+    const lines = readFileSync('./pyproject.toml', 'utf8').split('\n')
+    const stubsVersion = lines.filter(x => x.startsWith('version = '))[0].split('"')[1]
+    core.notice(`${stubsPackage} latest version = ${stubsVersion}`)
+
+    if (!isStableVersionGreater(version, stubsVersion)) {
+        core.notice(`Version ${version} is not greater that stubs ${stubsVersion}, skipping run`)
+        return
+    }
+
+    core.notice(`New ${package} version found: ${version}`)
+    core.notice(`${stubsPackage} build version = ${stubsVersion}`)
+    core.setOutput('version', version)
+    core.setOutput('stubs-version', stubsVersion)
+}
+
 module.exports = {
     setupGlobals,
-    extractVersions
+    extractVersions,
+    extractLocalVersions
 }

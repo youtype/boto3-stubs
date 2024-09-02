@@ -36,13 +36,10 @@ jobs:
         with:
           script: |
             const { readFileSync } = require('fs')
-            const { setupGlobals, extractVersions } = require('./.github/workflows/helpers.js')
-
-            const lines = readFileSync('./pyproject.toml', 'utf8').split('\n')
-            const stubsVersion = lines.filter(x => x.startsWith('version = '))[0].split('"')[1]
+            const { setupGlobals, extractLocalVersions } = require('./.github/workflows/helpers.js')
 
             setupGlobals({ fetch, core, context })
-            await extractVersions(stubsVersion)
+            await extractLocalVersions()
 
   publish-stubs:
     name: Publish stubs

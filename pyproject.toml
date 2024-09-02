@@ -25,9 +25,7 @@ classifiers = [
     "Typing :: Stubs Only",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = [
-    "typing-extensions>=4.1.0; python_version<'3.9'",
-]
+dependencies = ["typing-extensions>=4.1.0; python_version<'3.9'"]
 
 [tool.uv]
 config-settings = { editable-mode = "strict" }
@@ -60,9 +58,7 @@ requires = ['setuptools']
 build-backend = 'setuptools.build_meta'
 
 [tool.setuptools]
-packages = [
-    "boto3-stubs",
-]
+packages = ["boto3-stubs"]
 
 [tool.pyright]
 include = ["boto3-stubs"]

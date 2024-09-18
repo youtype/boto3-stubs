@@ -31,13 +31,11 @@ dependencies = ["typing-extensions>=4.1.0; python_version<'3.9'"]
 config-settings = { editable-mode = "strict" }
 dev-dependencies = [
     "setuptools",
-    "pre-commit",
     "boto3",
     "s3transfer",
     "awscrt",
     "botocore",
     "mypy",
-    "ruff",
     "pyright",
     "istub",
     "types-s3transfer",

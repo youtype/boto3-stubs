@@ -20,4 +20,4 @@ repos:
         name: mypy
         language: system
         pass_filenames: false
-        entry: uvx mypy boto3-stubs
+        entry: uv run mypy boto3-stubs
